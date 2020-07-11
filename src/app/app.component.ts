@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   data = {
-    title: 'Angular Core deep Dive'
+    title: 'Propert Listings'
   };
 }

@@ -63,6 +63,6 @@ export const Listing = [
       bedrooms: 4,
       bathrooms: 2.5,
       area: 1788,
-      image:'crib-6'
+      image: 'crib-6'
     }
-  ]
+];

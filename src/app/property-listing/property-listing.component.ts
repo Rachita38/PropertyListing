@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Listing} from './../data/Listing';
 
 @Component({
   selector: 'app-property-listing',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PropertyListingComponent implements OnInit {
 
+  Listings: Array<any> = Listing;
   constructor() { }
 
   ngOnInit(): void {
