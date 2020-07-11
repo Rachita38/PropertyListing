@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-
+import {Listing} from './../listing';
 
 @Component({
   selector: 'app-property-card',
@@ -8,10 +8,12 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PropertyCardComponent implements OnInit {
 
-  @Input('Listing') listing: any;
+  // tslint:disable-next-line: no-input-rename
+  @Input('listing') listing: Listing;
   constructor() { }
 
   ngOnInit(): void {
+    let bedrooms = this.listing.bedrooms;
   }
 
 }
