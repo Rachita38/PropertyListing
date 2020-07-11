@@ -1,43 +1,8 @@
 
 <!--<pre>{{Listings | json}}</pre> -->
 
-<div *ngFor="let listing of Listings" class="col-sm-4">
-<div class="thumbnail">
-    <img src="assets/images/{{ listing.image}}.jpg" alt="">
-   
-<div class="caption">
-        <div *ngIf = "!listing.showDetails">
-            <h4><span class="label label-primary">{{listing.type}}</span></h4>
-            <h3><i class="glyphicon glyphicon-tag"></i> {{listing.price | currency:'USD':true}}</h3>
-            <h4><i class="glyphicon glyphicon-home"></i> {{listing.address}}</h4>
-        
-
-         <button class="btn btn-sm btn-success"
-          *ngIf="!listing.showDetails" 
-          (click)="listing.showDetails = !listing.showDetails">
-         Details
-        </button>
-        </div>
-
-
-
-<div *ngIf="listing.showDetails">
-    <div class="details">
-    <h4><span class="label label-primary">Beds : {{listing.bedrooms}} </span>
-        <span class="label label-primary"> Bathrooms : {{listing.bathrooms}} </span>
-        <span class="label label-primary"> SqFT : {{listing.area}} </span>
-    </h4>
-   <p>{{listing.description}}</p> 
-
-    
-    <button class="btn btn-sm btn-danger" (click)="listing.showDetails = !listing.showDetails">
-        Close
-    </button>
-    </div>
-</div>
-
-</div>
-</div>
+<div *ngFor="let listing of Listings">
+<app-property-card [Listing]="listing" class="col-md-4"></app-property-card>
 </div>
 
 
