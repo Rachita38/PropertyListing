@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormsModule, NgForm } from '@angular/forms';
+import {PropertyService} from './../services/property.service';
+
 
 @Component({
   selector: 'app-add-listing-form',
@@ -7,12 +9,16 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./add-listing-form.component.css']
 })
 export class AddListingFormComponent implements OnInit {
+
+  @ViewChild('newListingForm') newListingform: NgForm;
   propertyTypes: Array<string> = ['Condo', 'Duplex', 'House'];
-  constructor() {  }
+ constructor(public listService: PropertyService) {  }
 
   ngOnInit(): void {}
+
   onListingSubmit(data: any): void{
-     console.log(data);
+     this.listService.addListing(data);
+     this.newListingform.reset();
     }
   }
 
