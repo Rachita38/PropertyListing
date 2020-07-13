@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   data = {
-    title: 'Propert Listings'
+    title: 'Property Listings'
   };
 }
